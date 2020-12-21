@@ -1,8 +1,14 @@
 import React from "react";
-import "./App.css";
+import NavBar from "./components/nav-bar";
+import Header from "./components/header";
 
-function App() {
-  return <div>Hello</div>;
-}
+const App = () => {
+  return (
+    <div>
+      <NavBar />
+      <Header />
+    </div>
+  );
+};
 
 export default App;
