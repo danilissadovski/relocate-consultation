@@ -1,0 +1,539 @@
+Index: src/components/Main/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Main from './main';\n\nexport default Main;\n
+===================================================================
+--- src/components/Main/index.js	(revision 37bca0b7031d9b6074a3352eca5356dd6d224ac5)
++++ src/components/Main/index.js	(date 1605548210802)
+@@ -1,3 +1,3 @@
+-import Main from './main';
++import Main from "./main";
+ 
+ export default Main;
+Index: src/components/assets/svg/heart.svg
+===================================================================
+--- src/components/assets/svg/heart.svg	(date 1591894782292)
++++ src/components/assets/svg/heart.svg	(date 1591894782292)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+\ No newline at end of file
+Index: src/components/NavBar/navBar.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\nimport \"./navBar.css\";\nimport {\n    Collapse,\n    Navbar,\n    NavbarToggler,\n    NavbarBrand,\n    Nav,\n    NavItem,\n    NavLink,\n    Container,\n    Button\n} from \"reactstrap\";\n\nclass NavBar extends React.Component {\n    constructor(props) {\n        super(props);\n\n        this.toggle = this.toggle.bind(this);\n        this.state = {\n            isOpen: false\n        };\n    }\n    toggle() {\n        this.setState({\n            isOpen: !this.state.isOpen\n        });\n    }\n    render() {\n        return (\n            <div>\n                <Navbar\n                    color=\"faded\"\n                    dark\n                    expand=\"md\"\n                    fixed={`top`}\n                    className=\"navDark\"\n                >\n                    <Container>\n                        <NavbarBrand href=\"#\">Консультации</NavbarBrand>\n                        <NavbarToggler onClick={this.toggle} />\n                        <Collapse isOpen={this.state.isOpen} navbar>\n                            <Nav className=\"ml-auto\" navbar>\n                                <NavItem>\n                                    <NavLink href=\"#\">Клиентам</NavLink>\n                                </NavItem>\n                                <NavItem>\n                                    <NavLink href=\"#\">Про меня</NavLink>\n                                </NavItem>\n                                <NavItem>\n                                    <NavLink href=\"#\">Услуги</NavLink>\n                                </NavItem>\n                                <NavItem>\n                                    <NavLink href=\"#\">Контакты</NavLink>\n                                </NavItem>\n                                <Button color=\"success\">Записаться</Button>{\" \"}\n                            </Nav>\n                        </Collapse>\n                    </Container>\n                </Navbar>\n            </div>\n        );\n    }\n}\n\nexport default NavBar;\n
+===================================================================
+--- src/components/NavBar/navBar.js	(revision 37bca0b7031d9b6074a3352eca5356dd6d224ac5)
++++ src/components/NavBar/navBar.js	(date 1605548987482)
+@@ -1,66 +1,66 @@
+ import React from "react";
+ import "./navBar.css";
+ import {
+-    Collapse,
+-    Navbar,
+-    NavbarToggler,
+-    NavbarBrand,
+-    Nav,
+-    NavItem,
+-    NavLink,
+-    Container,
+-    Button
++  Collapse,
++  Navbar,
++  NavbarToggler,
++  NavbarBrand,
++  Nav,
++  NavItem,
++  NavLink,
++  Container,
++  Button,
+ } from "reactstrap";
+ 
+ class NavBar extends React.Component {
+-    constructor(props) {
+-        super(props);
++  constructor(props) {
++    super(props);
+ 
+-        this.toggle = this.toggle.bind(this);
+-        this.state = {
+-            isOpen: false
+-        };
+-    }
+-    toggle() {
+-        this.setState({
+-            isOpen: !this.state.isOpen
+-        });
+-    }
+-    render() {
+-        return (
+-            <div>
+-                <Navbar
+-                    color="faded"
+-                    dark
+-                    expand="md"
+-                    fixed={`top`}
+-                    className="navDark"
+-                >
+-                    <Container>
+-                        <NavbarBrand href="#">Консультации</NavbarBrand>
+-                        <NavbarToggler onClick={this.toggle} />
+-                        <Collapse isOpen={this.state.isOpen} navbar>
+-                            <Nav className="ml-auto" navbar>
+-                                <NavItem>
+-                                    <NavLink href="#">Клиентам</NavLink>
+-                                </NavItem>
+-                                <NavItem>
+-                                    <NavLink href="#">Про меня</NavLink>
+-                                </NavItem>
+-                                <NavItem>
+-                                    <NavLink href="#">Услуги</NavLink>
+-                                </NavItem>
+-                                <NavItem>
+-                                    <NavLink href="#">Контакты</NavLink>
+-                                </NavItem>
+-                                <Button color="success">Записаться</Button>{" "}
+-                            </Nav>
+-                        </Collapse>
+-                    </Container>
+-                </Navbar>
+-            </div>
+-        );
+-    }
++    this.toggle = this.toggle.bind(this);
++    this.state = {
++      isOpen: false,
++    };
++  }
++  toggle() {
++    this.setState({
++      isOpen: !this.state.isOpen,
++    });
++  }
++  render() {
++    return (
++      <div>
++        <Navbar
++          color="faded"
++          dark
++          expand="md"
++          fixed={`top`}
++          className="navDark"
++        >
++          <Container>
++            <NavbarBrand href="#">Консультации</NavbarBrand>
++            <NavbarToggler onClick={this.toggle} />
++            <Collapse isOpen={this.state.isOpen} navbar>
++              <Nav className="ml-auto" navbar>
++                <NavItem>
++                  <NavLink href="#">Клиентам</NavLink>
++                </NavItem>
++                <NavItem>
++                  <NavLink href="#">Услуги</NavLink>
++                </NavItem>
++                <NavItem>
++                  <NavLink href="#">Про меня</NavLink>
++                </NavItem>
++                <NavItem>
++                  <NavLink href="#">Контакты</NavLink>
++                </NavItem>
++                <Button color="success">Записаться</Button>{" "}
++              </Nav>
++            </Collapse>
++          </Container>
++        </Navbar>
++      </div>
++    );
++  }
+ }
+ 
+ export default NavBar;
+Index: src/components/assets/svg/award.svg
+===================================================================
+--- src/components/assets/svg/award.svg	(date 1591894782291)
++++ src/components/assets/svg/award.svg	(date 1591894782291)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+\ No newline at end of file
+Index: src/components/assets/svg/mail.svg
+===================================================================
+--- src/components/assets/svg/mail.svg	(date 1591894782292)
++++ src/components/assets/svg/mail.svg	(date 1591894782292)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+\ No newline at end of file
+Index: src/components/assets/svg/info.svg
+===================================================================
+--- src/components/assets/svg/info.svg	(date 1591894782292)
++++ src/components/assets/svg/info.svg	(date 1591894782292)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>
+\ No newline at end of file
+Index: src/components/assets/svg/map-pin.svg
+===================================================================
+--- src/components/assets/svg/map-pin.svg	(date 1591894782292)
++++ src/components/assets/svg/map-pin.svg	(date 1591894782292)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+\ No newline at end of file
+Index: src/index.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  background-color: blue;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\n    monospace;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/index.css	(revision 37bca0b7031d9b6074a3352eca5356dd6d224ac5)
++++ src/index.css	(date 1605548210805)
+@@ -1,7 +1,7 @@
+ body {
+   margin: 0;
+-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
++  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
++    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+     sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+@@ -9,6 +9,6 @@
+ }
+ 
+ code {
+-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
++  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+     monospace;
+ }
+Index: src/components/assets/svg/compass.svg
+===================================================================
+--- src/components/assets/svg/compass.svg	(date 1591894782291)
++++ src/components/assets/svg/compass.svg	(date 1591894782291)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+\ No newline at end of file
+Index: src/App.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/App.css	(revision 37bca0b7031d9b6074a3352eca5356dd6d224ac5)
++++ src/App.css	(date 1605548210808)
+@@ -1,1 +1,0 @@
+-
+Index: src/components/assets/svg/shield.svg
+===================================================================
+--- src/components/assets/svg/shield.svg	(date 1591894782293)
++++ src/components/assets/svg/shield.svg	(date 1591894782293)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+\ No newline at end of file
+Index: src/components/assets/svg/phone.svg
+===================================================================
+--- src/components/assets/svg/phone.svg	(date 1591894782293)
++++ src/components/assets/svg/phone.svg	(date 1591894782293)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+\ No newline at end of file
+Index: src/components/assets/svg/flag.svg
+===================================================================
+--- src/components/assets/svg/flag.svg	(date 1591894782292)
++++ src/components/assets/svg/flag.svg	(date 1591894782292)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-flag"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+\ No newline at end of file
+Index: src/components/Main/main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#main {\n    background-size: cover;\n    color: white;\n}\n\n#main h1 {\n    font-family: \"Raleway\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-weight: 900;\n    font-size: 60px;\n}\n\n.wrapped-page {\n    width: 100%;\n    height: 100vh;\n    display: flex;\n    margin-left: auto;\n    margin-right: auto;\n    align-items: center;\n    background: rgba(0, 0, 0, 0.3);\n}\n\n.item-center {\n    text-align: center;\n    align-items: center;\n    margin-left: auto;\n    margin-right: auto;\n}
+===================================================================
+--- src/components/Main/main.css	(revision 37bca0b7031d9b6074a3352eca5356dd6d224ac5)
++++ src/components/Main/main.css	(date 1605548210798)
+@@ -1,27 +1,27 @@
+ #main {
+-    background-size: cover;
+-    color: white;
++  background-size: cover;
++  color: white;
+ }
+ 
+ #main h1 {
+-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+-    font-weight: 900;
+-    font-size: 60px;
++  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
++  font-weight: 900;
++  font-size: 60px;
+ }
+ 
+ .wrapped-page {
+-    width: 100%;
+-    height: 100vh;
+-    display: flex;
+-    margin-left: auto;
+-    margin-right: auto;
+-    align-items: center;
+-    background: rgba(0, 0, 0, 0.3);
++  width: 100%;
++  height: 100vh;
++  display: flex;
++  margin-left: auto;
++  margin-right: auto;
++  align-items: center;
++  background: rgba(0, 0, 0, 0.3);
+ }
+ 
+ .item-center {
+-    text-align: center;
+-    align-items: center;
+-    margin-left: auto;
+-    margin-right: auto;
+-}
+\ No newline at end of file
++  text-align: center;
++  align-items: center;
++  margin-left: auto;
++  margin-right: auto;
++}
+Index: src/components/assets/svg/map.svg
+===================================================================
+--- src/components/assets/svg/map.svg	(date 1591894782292)
++++ src/components/assets/svg/map.svg	(date 1591894782292)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+\ No newline at end of file
+Index: src/components/assets/svg/linkedin.svg
+===================================================================
+--- src/components/assets/svg/linkedin.svg	(date 1591894782292)
++++ src/components/assets/svg/linkedin.svg	(date 1591894782292)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+\ No newline at end of file
+Index: src/components/assets/svg/facebook.svg
+===================================================================
+--- src/components/assets/svg/facebook.svg	(date 1591894782291)
++++ src/components/assets/svg/facebook.svg	(date 1591894782291)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+\ No newline at end of file
+Index: src/components/assets/svg/twitter.svg
+===================================================================
+--- src/components/assets/svg/twitter.svg	(date 1591894782293)
++++ src/components/assets/svg/twitter.svg	(date 1591894782293)
+@@ -0,0 +1,1 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+\ No newline at end of file
+Index: src/components/NavBar/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import NavBar from './navBar';\n\nexport default NavBar;\n
+===================================================================
+--- src/components/NavBar/index.js	(revision 37bca0b7031d9b6074a3352eca5356dd6d224ac5)
++++ src/components/NavBar/index.js	(date 1605548210793)
+@@ -1,3 +1,3 @@
+-import NavBar from './navBar';
++import NavBar from "./navBar";
+ 
+ export default NavBar;
+Index: src/components/NavBar/navBar.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.navDark {\n    background: rgba(0, 0, 0, 0.6);\n}\n\n.nav-link {\n    color: rgb(216, 216, 216) !important;\n}\n\n.nav-link.active,\n.nav-link:hover {\n    color: #fdd86a !important;\n}
+===================================================================
+--- src/components/NavBar/navBar.css	(revision 37bca0b7031d9b6074a3352eca5356dd6d224ac5)
++++ src/components/NavBar/navBar.css	(date 1605548210809)
+@@ -1,12 +1,12 @@
+ .navDark {
+-    background: rgba(0, 0, 0, 0.6);
++  background: rgba(0, 0, 0, 0.6);
+ }
+ 
+ .nav-link {
+-    color: rgb(216, 216, 216) !important;
++  color: rgb(216, 216, 216) !important;
+ }
+ 
+ .nav-link.active,
+ .nav-link:hover {
+-    color: #fdd86a !important;
+-}
+\ No newline at end of file
++  color: #fdd86a !important;
++}
+Index: src/components/CaruselInfo/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import caruselInfo from './caruselInfo';\n\nexport default caruselInfo;\n
+===================================================================
+--- src/components/CaruselInfo/index.js	(revision 37bca0b7031d9b6074a3352eca5356dd6d224ac5)
++++ src/components/CarouselInfo/index.js	(date 1605548210795)
+@@ -1,3 +1,3 @@
+-import caruselInfo from './caruselInfo';
++import carouselInfo from "./carouselInfo";
+ 
+-export default caruselInfo;
++export default carouselInfo;
+Index: src/components/CaruselInfo/caruselInfo.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\nimport beach from './img/beach.jpg';\nimport resort from \"./img/resort.jpg\";\nimport camp from \"./img/camp.jpg\";\nimport mountain from \"./img/mountain.jpg\";\nimport gulp from \"./img/gulp.jpg\";\nimport {\n  Carousel,\n  CarouselItem,\n  CarouselControl,\n  CarouselIndicators,\n  CarouselCaption\n} from \"reactstrap\";\nimport \"./caruselInfo.css\"\n\nconst items = [\n  {\n    src: resort,\n    caption: \"Caption 1\"\n  },\n  {\n    src: gulp,\n    caption: \"Caption 2\"\n  },\n  {\n    src: camp,\n    caption: \"Caption 3\"\n  },\n  {\n    src: beach,\n    caption: \"Caption 4\"\n  },\n  {\n    src: mountain,\n    caption: \"Caption 5\"\n  }\n];\n\nclass CaruselInfo extends Component {\n  constructor(props) {\n    super(props);\n    this.state = { activeIndex: 0 };\n    this.next = this.next.bind(this);\n    this.previous = this.previous.bind(this);\n    this.goToIndex = this.goToIndex.bind(this);\n    this.onExiting = this.onExiting.bind(this);\n    this.onExited = this.onExited.bind(this);\n  }\n\n  onExiting() {\n    this.animating = true;\n  }\n\n  onExited() {\n    this.animating = false;\n  }\n\n  next() {\n    if (this.animating) return;\n    const nextIndex =\n        this.state.activeIndex === items.length - 1\n            ? 0\n            : this.state.activeIndex + 1;\n    this.setState({ activeIndex: nextIndex });\n  }\n\n  previous() {\n    if (this.animating) return;\n    const nextIndex =\n        this.state.activeIndex === 0\n            ? items.length - 1\n            : this.state.activeIndex - 1;\n    this.setState({ activeIndex: nextIndex });\n  }\n\n  goToIndex(newIndex) {\n    if (this.animating) return;\n    this.setState({ activeIndex: newIndex });\n  }\n\n  render() {\n    const { activeIndex } = this.state;\n\n    const slides = items.map(item => {\n      return (\n          <CarouselItem\n              onExiting={this.onExiting}\n              onExited={this.onExited}\n              key={item.src}\n          >\n            <img src={item.src} alt={item.src} className=\"img-carousel\" />\n            <CarouselCaption\n                captionHeader={item.caption}\n            />\n          </CarouselItem>\n      );\n    });\n\n    return (\n        <Carousel\n            activeIndex={activeIndex}\n            next={this.next}\n            previous={this.previous}\n        >\n          <CarouselIndicators\n              items={items}\n              activeIndex={activeIndex}\n              onClickHandler={this.goToIndex}\n          />\n          {slides}\n          <CarouselControl\n              direction=\"prev\"\n              directionText=\"Previous\"\n              onClickHandler={this.previous}\n          />\n          <CarouselControl\n              direction=\"next\"\n              directionText=\"Next\"\n              onClickHandler={this.next}\n          />\n        </Carousel>\n    );\n  }\n}\n\nexport default CaruselInfo;\n
+===================================================================
+--- src/components/CaruselInfo/caruselInfo.js	(revision 37bca0b7031d9b6074a3352eca5356dd6d224ac5)
++++ src/components/CarouselInfo/carouselInfo.js	(date 1605548210801)
+@@ -1,5 +1,5 @@
+ import React, { Component } from "react";
+-import beach from './img/beach.jpg';
++import beach from "./img/beach.jpg";
+ import resort from "./img/resort.jpg";
+ import camp from "./img/camp.jpg";
+ import mountain from "./img/mountain.jpg";
+@@ -9,34 +9,34 @@
+   CarouselItem,
+   CarouselControl,
+   CarouselIndicators,
+-  CarouselCaption
++  CarouselCaption,
+ } from "reactstrap";
+-import "./caruselInfo.css"
++import "./carouselInfo.css";
+ 
+ const items = [
+   {
+     src: resort,
+-    caption: "Caption 1"
++    caption: "Caption 1",
+   },
+   {
+     src: gulp,
+-    caption: "Caption 2"
++    caption: "Caption 2",
+   },
+   {
+     src: camp,
+-    caption: "Caption 3"
++    caption: "Caption 3",
+   },
+   {
+     src: beach,
+-    caption: "Caption 4"
++    caption: "Caption 4",
+   },
+   {
+     src: mountain,
+-    caption: "Caption 5"
+-  }
++    caption: "Caption 5",
++  },
+ ];
+ 
+-class CaruselInfo extends Component {
++class CarouselInfo extends Component {
+   constructor(props) {
+     super(props);
+     this.state = { activeIndex: 0 };
+@@ -58,18 +58,18 @@
+   next() {
+     if (this.animating) return;
+     const nextIndex =
+-        this.state.activeIndex === items.length - 1
+-            ? 0
+-            : this.state.activeIndex + 1;
++      this.state.activeIndex === items.length - 1
++        ? 0
++        : this.state.activeIndex + 1;
+     this.setState({ activeIndex: nextIndex });
+   }
+ 
+   previous() {
+     if (this.animating) return;
+     const nextIndex =
+-        this.state.activeIndex === 0
+-            ? items.length - 1
+-            : this.state.activeIndex - 1;
++      this.state.activeIndex === 0
++        ? items.length - 1
++        : this.state.activeIndex - 1;
+     this.setState({ activeIndex: nextIndex });
+   }
+ 
+@@ -81,46 +81,44 @@
+   render() {
+     const { activeIndex } = this.state;
+ 
+-    const slides = items.map(item => {
++    const slides = items.map((item) => {
+       return (
+-          <CarouselItem
+-              onExiting={this.onExiting}
+-              onExited={this.onExited}
+-              key={item.src}
+-          >
+-            <img src={item.src} alt={item.src} className="img-carousel" />
+-            <CarouselCaption
+-                captionHeader={item.caption}
+-            />
+-          </CarouselItem>
++        <CarouselItem
++          onExiting={this.onExiting}
++          onExited={this.onExited}
++          key={item.src}
++        >
++          <img src={item.src} alt={item.src} className="img-carousel" />
++          <CarouselCaption captionHeader={item.caption} />
++        </CarouselItem>
+       );
+     });
+ 
+     return (
+-        <Carousel
+-            activeIndex={activeIndex}
+-            next={this.next}
+-            previous={this.previous}
+-        >
+-          <CarouselIndicators
+-              items={items}
+-              activeIndex={activeIndex}
+-              onClickHandler={this.goToIndex}
+-          />
+-          {slides}
+-          <CarouselControl
+-              direction="prev"
+-              directionText="Previous"
+-              onClickHandler={this.previous}
+-          />
+-          <CarouselControl
+-              direction="next"
+-              directionText="Next"
+-              onClickHandler={this.next}
+-          />
+-        </Carousel>
++      <Carousel
++        activeIndex={activeIndex}
++        next={this.next}
++        previous={this.previous}
++      >
++        <CarouselIndicators
++          items={items}
++          activeIndex={activeIndex}
++          onClickHandler={this.goToIndex}
++        />
++        {slides}
++        <CarouselControl
++          direction="prev"
++          directionText="Previous"
++          onClickHandler={this.previous}
++        />
++        <CarouselControl
++          direction="next"
++          directionText="Next"
++          onClickHandler={this.next}
++        />
++      </Carousel>
+     );
+   }
+ }
+ 
+-export default CaruselInfo;
++export default CarouselInfo;
+diff --git src/components/CaruselInfo/caruselInfo.css src/components/CarouselInfo/carouselInfo.css
+rename from src/components/CaruselInfo/caruselInfo.css
+rename to src/components/CarouselInfo/carouselInfo.css
