@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row } from "reactstrap";
 import "./footer.css";
 import { ReactComponent as Facebook } from "../../assets/svg/facebook.svg";
 import { ReactComponent as Linkedin } from "../../assets/svg/linkedin.svg";
