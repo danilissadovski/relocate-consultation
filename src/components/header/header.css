@@ -1,5 +1,4 @@
 .cover-page {
-  height: 100vh;
   background: #40798c;
 }
 
@@ -12,7 +11,7 @@
 #hero h1 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
-  font-size: 60px;
+  font-size: 235%;
 }
 
 .wrapped-page {

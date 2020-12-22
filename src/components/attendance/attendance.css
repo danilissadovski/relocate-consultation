@@ -1,0 +1,19 @@
+.subComponent {
+  padding: 50px 0px;
+  background-color: #70a9a1;
+}
+
+.svg-group p {
+  margin: 15px 0px;
+}
+
+.svg-card {
+  background: #cfe0c3;
+  color: #2b2b2b;
+  padding: 30px;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
