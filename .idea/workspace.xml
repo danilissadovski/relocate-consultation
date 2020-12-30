@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db013c72-7b25-4a4e-a3d7-f6147f550def" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/attendance/attendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/attendance/attendance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/carousel/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/carousel/carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav-bar/nav-bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-bar/nav-bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/calendar/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/calendar/calendar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
