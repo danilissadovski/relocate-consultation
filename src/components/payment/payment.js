@@ -1,31 +1,48 @@
-import React from 'react';
-import { loadStripe } from '@stripe/stripe-js';
-// Make sure to call `loadStripe` outside of a component’s render to avoid
-// recreating the `Stripe` object on every render.
-const stripePromise = loadStripe('sk_test_51I3trCEFZes1ii4A49i41Z3WUkO6ayiJ8P0G4h1OD4yBtJhbMDtcWdlR3pGoDoqKULy1QLOpPbwKXV09M3a3sQ5200p1cNGcaF');
+import React from "react";
+import StripeCheckout from "react-stripe-checkout";
+import axios from "axios";
+import { toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+import "./payment.css";
+
+toast.configure();
 
 const Payment = () => {
-    const handleClick = async (event) => {
-        const stripe = await stripePromise;
-        const response = await fetch('/create-checkout-session', { method: 'POST' });
+    const [product] = React.useState({
+        name: "Консультация",
+        price: 10
+    });
 
-        const session = await response.json();
-
-        const result = await stripe.redirectToCheckout({
-            sessionId: session.id,
-        });
-
-        if (result.error) {
-            // If `redirectToCheckout` fails due to a browser or network
-            // error, display the localized error message to your customer
-            // using `result.error.message
+    async function handleToken(token, addresses) {
+        const response = await axios.post(
+            "https://ry7v05l6on.sse.codesandbox.io/checkout",
+            { token, product }
+        );
+        const { status } = response.data;
+        console.log("Response:", response.data);
+        if (status === "success") {
+            toast("Success! Check email for details", { type: "success" });
+        } else {
+            toast("Something went wrong", { type: "error" });
         }
-    };
+    }
 
     return (
-        <button role="link" onClick={handleClick}>
-            Checkout
-        </button>
+        <div className="container">
+            <div className="product">
+                <h1>{product.name}</h1>
+                <h3>30 минут · ${product.price}</h3>
+            </div>
+            <StripeCheckout
+                stripeKey="pk_test_51I3trCEFZes1ii4A7CUoqqjWw7r3HcH1yCp2K99LsLJo95n1rneDo62DYw0dYpuIACA3VGr8H56BepnxShfolvCP00SwqZZn7t"
+                token={handleToken}
+                amount={product.price * 100}
+                name="Tesla Roadster"
+                billingAddress
+                shippingAddress
+            />
+        </div>
     );
 }
 
