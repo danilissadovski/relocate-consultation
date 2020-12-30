@@ -15,6 +15,7 @@ export default class Carousel extends React.Component {
         naturalSlideWidth={100}
         naturalSlideHeight={50}
         totalSlides={3}
+        id="carousel"
       >
         <Slider>
           <Slide index={0}>I am the first Slide.</Slide>

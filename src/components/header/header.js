@@ -3,7 +3,7 @@ import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./header.css";
 const Header = () => (
-  <div>
+  <div id="header">
     <main className="cover-page" id="hero">
       <section className="wrapped-page">
         <div className="item-center">

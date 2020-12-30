@@ -9,7 +9,7 @@ import FooterSvgBox from "./footer-svg-box";
 class Footer extends Component {
   render() {
     return (
-      <div className="subComponent-lg" id="footerBody">
+      <div className="subComponent-lg" id="footer">
         <Container>
           <header className="headerTitle text-center">
             <b>Не жди!</b> <b>Свяжись со мной сейчас</b>

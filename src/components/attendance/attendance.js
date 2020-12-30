@@ -10,7 +10,7 @@ import AttendanceBox from "./attendance-box";
 class Attendance extends Component {
   render() {
     return (
-      <div>
+      <div id="attendance">
         <div className="subComponent">
           <Container>
             <header className="headerTitle text-center">

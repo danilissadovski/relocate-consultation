@@ -11,6 +11,7 @@ import {
   Button,
 } from "reactstrap";
 import "./nav-bar.css";
+import { Link } from "react-router-dom";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -42,18 +43,20 @@ class NavBar extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="#">Клиентам</NavLink>
+                  <NavLink href="#header">Клиентам</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Услуги</NavLink>
+                  <NavLink href="#carousel">Про меня</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Про меня</NavLink>
+                  <NavLink href="#attendance">Услуги</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Контакты</NavLink>
+                  <NavLink href="#footer">Контакты</NavLink>
                 </NavItem>
-                <Button color="success">Записаться</Button>
+                <Link to="/register">
+                  <Button color="success">Записаться</Button>
+                </Link>
               </Nav>
             </Collapse>
           </Container>
